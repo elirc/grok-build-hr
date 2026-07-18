@@ -1,0 +1,79 @@
+// Prisma schema for HR Platform
+// Models: User, Employee, Department, LeaveRequest, Review
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  passwordHash  String
+  name          String
+  role          Role     @default(EMPLOYEE)
+  createdAt     DateTime @default(now())
+  employees     Employee[] @relation("ManagerEmployees")
+  leaveRequests LeaveRequest[]
+  reviews       Review[]
+}
+
+enum Role {
+  EMPLOYEE
+  MANAGER
+  HR_ADMIN
+}
+
+model Department {
+  id        String     @id @default(cuid())
+  name      String
+  employees Employee[]
+}
+
+model Employee {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  departmentId String
+  managerId    String?
+  position     String
+  startDate    DateTime @default(now())
+
+  user         User      @relation(fields: [userId], references: [id])
+  department   Department @relation(fields: [departmentId], references: [id])
+  manager      Employee?  @relation("ManagerEmployees", fields: [managerId], references: [id])
+  reports      Employee[] @relation("ManagerEmployees")
+  leaveRequests LeaveRequest[]
+  reviews      Review[]
+}
+
+model LeaveRequest {
+  id          String   @id @default(cuid())
+  employeeId  String
+  startDate   DateTime
+  endDate     DateTime
+  type        String   // VACATION, SICK, etc.
+  status      String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  reason      String?
+  approvedBy  String?
+  createdAt   DateTime @default(now())
+
+  employee    Employee @relation(fields: [employeeId], references: [id])
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  employeeId String
+  reviewerId String
+  period     String
+  rating     Int
+  comments   String?
+  status     String   @default("DRAFT")
+  createdAt  DateTime @default(now())
+
+  employee   Employee @relation(fields: [employeeId], references: [id])
+  reviewer   User     @relation(fields: [reviewerId], references: [id])
+}
