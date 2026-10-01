@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "mode": "browser",
+  "database": "PostgreSQL 18; helper-owned temporary loopback cluster",
+  "setupTests": 3,
+  "browserTests": 11,
+  "build": true
+}

@@ -1,0 +1,674 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\playwright.config.mjs",
+    "rootDir": "C:/Users/Owner/Desktop/AstraOrganized2/astra-remaining-improvements/stage/baf8258948be/browser-tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Owner/Desktop/AstraOrganized2/astra-remaining-improvements/stage/baf8258948be/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Owner/Desktop/AstraOrganized2/astra-remaining-improvements/stage/baf8258948be/browser-tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\checks\\hr-workspace\\full-first\\browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "hr.spec.mjs",
+      "file": "hr.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "employee access and token lifetime match the actual authenticated scope",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3638,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:27:48.984Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-3335f047bab485d26338",
+          "file": "hr.spec.mjs",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "department CRUD retains identity and prevents referenced deletion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4069,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:27:53.090Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-230936a2d1d582cd9c6f",
+          "file": "hr.spec.mjs",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "HR creates edits and explicitly deletes an unreferenced employee aggregate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6090,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:27:57.233Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-351cb4bacd88b43c1413",
+          "file": "hr.spec.mjs",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "employee leave CRUD preserves accepted versions and confirms deletion",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 45459,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 6,
+                        "line": 220
+                      },
+                      "message": "Error: locator.fill: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n\n  218 |   await page\n  219 |     .getByLabel(\"Request reason\", { exact: true })\n> 220 |     .fill(\"Updated request reasoning\");\n      |      ^\n  221 |   await page\n  222 |     .getByRole(\"button\", { name: \"Save leave request\", exact: true })\n  223 |     .click();\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:220:6"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:28:03.407Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-employee-leave-CRUD-pre-41c95-sions-and-confirms-deletion\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-employee-leave-CRUD-pre-41c95-sions-and-confirms-deletion\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-ab760ab84ad974f8a3fe",
+          "file": "hr.spec.mjs",
+          "line": 202,
+          "column": 1
+        },
+        {
+          "title": "overlapping dates are rejected while the unsaved request remains exportable",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13227,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: \u001b[32m\"Keep this overlap draft\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: \u001b[32m\"Keep this overlap draft\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:257:68",
+                    "location": {
+                      "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                      "column": 68,
+                      "line": 257
+                    },
+                    "snippet": "  255 |     .click();\n  256 |   await expect(page.getByRole(\"alert\")).toContainText(\"overlap\");\n> 257 |   await expect(page.getByLabel(\"Request reason\", { exact: true })).toHaveValue(\n      |                                                                    ^\n  258 |     \"Keep this overlap draft\",\n  259 |   );\n  260 |   const download = page.waitForEvent(\"download\");"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 68,
+                        "line": 257
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: \u001b[32m\"Keep this overlap draft\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n\n  255 |     .click();\n  256 |   await expect(page.getByRole(\"alert\")).toContainText(\"overlap\");\n> 257 |   await expect(page.getByLabel(\"Request reason\", { exact: true })).toHaveValue(\n      |                                                                    ^\n  258 |     \"Keep this overlap draft\",\n  259 |   );\n  260 |   const download = page.waitForEvent(\"download\");\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:257:68"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:28:52.773Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-overlapping-dates-are-r-f82cb--request-remains-exportable\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-overlapping-dates-are-r-f82cb--request-remains-exportable\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                    "column": 68,
+                    "line": 257
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-8ef793032fbffe2370b8",
+          "file": "hr.spec.mjs",
+          "line": 239,
+          "column": 1
+        },
+        {
+          "title": "manager decisions and owner cancellation preserve the recorded decision",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13222,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: disabled\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: disabled\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:279:5",
+                    "location": {
+                      "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                      "column": 5,
+                      "line": 279
+                    },
+                    "snippet": "  277 |   await expect(\n  278 |     page.getByLabel(\"Request reason\", { exact: true }),\n> 279 |   ).toBeDisabled();\n      |     ^\n  280 |   await page\n  281 |     .getByLabel(\"Decision note\", { exact: true })\n  282 |     .fill(\"Coordinate a handover before leaving.\");"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 5,
+                        "line": 279
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: disabled\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n\n  277 |   await expect(\n  278 |     page.getByLabel(\"Request reason\", { exact: true }),\n> 279 |   ).toBeDisabled();\n      |     ^\n  280 |   await page\n  281 |     .getByLabel(\"Decision note\", { exact: true })\n  282 |     .fill(\"Coordinate a handover before leaving.\");\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:279:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:29:11.709Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-manager-decisions-and-o-5ba44-serve-the-recorded-decision\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-manager-decisions-and-o-5ba44-serve-the-recorded-decision\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                    "column": 5,
+                    "line": 279
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-778969bef28b3d4ba8c5",
+          "file": "hr.spec.mjs",
+          "line": 269,
+          "column": 1
+        },
+        {
+          "title": "two employee editors preserve the losing draft and captured version",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 45480,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 6,
+                        "line": 329
+                      },
+                      "message": "Error: locator.fill: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n\n  327 |   await page\n  328 |     .getByLabel(\"Request reason\", { exact: true })\n> 329 |     .fill(\"Accepted first-editor note\");\n      |      ^\n  330 |   await page\n  331 |     .getByRole(\"button\", { name: \"Save leave request\", exact: true })\n  332 |     .click();\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:329:6"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:29:29.870Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-two-employee-editors-pr-14c79--draft-and-captured-version\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-two-employee-editors-pr-14c79--draft-and-captured-version\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-0debf423ecec371444ae",
+          "file": "hr.spec.mjs",
+          "line": 316,
+          "column": 1
+        },
+        {
+          "title": "competing manager and HR decisions do not overwrite the first decision",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14265,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Decision note', { exact: true })\nExpected: \u001b[32m\"Pending HR reasoning\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Decision note', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Decision note', { exact: true })\nExpected: \u001b[32m\"Pending HR reasoning\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Decision note', { exact: true })\u001b[22m\n\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:384:69",
+                    "location": {
+                      "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                      "column": 69,
+                      "line": 384
+                    },
+                    "snippet": "  382 |     .click();\n  383 |   await expect(second.getByRole(\"alert\")).toContainText(\"record changed\");\n> 384 |   await expect(second.getByLabel(\"Decision note\", { exact: true })).toHaveValue(\n      |                                                                     ^\n  385 |     \"Pending HR reasoning\",\n  386 |   );\n  387 |   second.once(\"dialog\", (d) => d.accept());"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 69,
+                        "line": 384
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Decision note', { exact: true })\nExpected: \u001b[32m\"Pending HR reasoning\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Decision note', { exact: true })\u001b[22m\n\n\n  382 |     .click();\n  383 |   await expect(second.getByRole(\"alert\")).toContainText(\"record changed\");\n> 384 |   await expect(second.getByLabel(\"Decision note\", { exact: true })).toHaveValue(\n      |                                                                     ^\n  385 |     \"Pending HR reasoning\",\n  386 |   );\n  387 |   second.once(\"dialog\", (d) => d.accept());\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:384:69"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:30:19.584Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-competing-manager-and-H-d2e71-verwrite-the-first-decision\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-competing-manager-and-H-d2e71-verwrite-the-first-decision\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                    "column": 69,
+                    "line": 384
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-2ece9aa18249069ba845",
+          "file": "hr.spec.mjs",
+          "line": 360,
+          "column": 1
+        },
+        {
+          "title": "failed saves preserve input and failed refreshes do not undo accepted saves",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 45346,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 6,
+                        "line": 413
+                      },
+                      "message": "Error: locator.fill: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n\n  411 |   await page\n  412 |     .getByLabel(\"Request reason\", { exact: true })\n> 413 |     .fill(\"Keep this pending note\");\n      |      ^\n  414 |   await page\n  415 |     .getByRole(\"button\", { name: \"Save leave request\", exact: true })\n  416 |     .click();\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:413:6"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:30:41.376Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-failed-saves-preserve-i-689b0--do-not-undo-accepted-saves\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-failed-saves-preserve-i-689b0--do-not-undo-accepted-saves\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-46bffcc7802949021676",
+          "file": "hr.spec.mjs",
+          "line": 396,
+          "column": 1
+        },
+        {
+          "title": "section changes and sign-out confirm unsaved work",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 11812,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: \u001b[32m\"Unsaved transition draft\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: \u001b[32m\"Unsaved transition draft\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:447:68",
+                    "location": {
+                      "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                      "column": 68,
+                      "line": 447
+                    },
+                    "snippet": "  445 |     .getByRole(\"button\", { name: \"People directory\", exact: true })\n  446 |     .click();\n> 447 |   await expect(page.getByLabel(\"Request reason\", { exact: true })).toHaveValue(\n      |                                                                    ^\n  448 |     \"Unsaved transition draft\",\n  449 |   );\n  450 |   page.once(\"dialog\", (d) => d.dismiss());"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                        "column": 68,
+                        "line": 447
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Request reason', { exact: true })\nExpected: \u001b[32m\"Unsaved transition draft\"\u001b[39m\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Request reason', { exact: true })\u001b[22m\n\n\n  445 |     .getByRole(\"button\", { name: \"People directory\", exact: true })\n  446 |     .click();\n> 447 |   await expect(page.getByLabel(\"Request reason\", { exact: true })).toHaveValue(\n      |                                                                    ^\n  448 |     \"Unsaved transition draft\",\n  449 |   );\n  450 |   page.once(\"dialog\", (d) => d.dismiss());\n    at C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs:447:68"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:31:31.387Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-section-changes-and-sign-out-confirm-unsaved-work\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\test-results\\hr-section-changes-and-sign-out-confirm-unsaved-work\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Owner\\Desktop\\AstraOrganized2\\astra-remaining-improvements\\stage\\baf8258948be\\browser-tests\\hr.spec.mjs",
+                    "column": 68,
+                    "line": 447
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-cdc4124c5409cfd05afb",
+          "file": "hr.spec.mjs",
+          "line": 435,
+          "column": 1
+        },
+        {
+          "title": "desktop and narrow leave-review layouts remain readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3433,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T11:31:47.721Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02d712fbd54e24566eb5-f9d66f1b50c454c5b604",
+          "file": "hr.spec.mjs",
+          "line": 468,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-09T11:27:37.980Z",
+    "duration": 258688.23700000002,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  }
+}

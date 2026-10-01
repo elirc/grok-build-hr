@@ -1,0 +1,315 @@
+
+Running 11 tests using 1 worker
+
+  ok  1 browser-tests\hr.spec.mjs:50:1 › employee access and token lifetime match the actual authenticated scope (3.6s)
+  ok  2 browser-tests\hr.spec.mjs:79:1 › department CRUD retains identity and prevents referenced deletion (4.1s)
+  ok  3 browser-tests\hr.spec.mjs:138:1 › HR creates edits and explicitly deletes an unreferenced employee aggregate (6.1s)
+  x   4 browser-tests\hr.spec.mjs:202:1 › employee leave CRUD preserves accepted versions and confirms deletion (45.5s)
+  x   5 browser-tests\hr.spec.mjs:239:1 › overlapping dates are rejected while the unsaved request remains exportable (13.2s)
+  x   6 browser-tests\hr.spec.mjs:269:1 › manager decisions and owner cancellation preserve the recorded decision (13.2s)
+  x   7 browser-tests\hr.spec.mjs:316:1 › two employee editors preserve the losing draft and captured version (45.5s)
+  x   8 browser-tests\hr.spec.mjs:360:1 › competing manager and HR decisions do not overwrite the first decision (14.3s)
+  x   9 browser-tests\hr.spec.mjs:396:1 › failed saves preserve input and failed refreshes do not undo accepted saves (45.3s)
+  x  10 browser-tests\hr.spec.mjs:435:1 › section changes and sign-out confirm unsaved work (11.8s)
+  ok 11 browser-tests\hr.spec.mjs:468:1 › desktop and narrow leave-review layouts remain readable (3.4s)
+
+
+  1) browser-tests\hr.spec.mjs:202:1 › employee leave CRUD preserves accepted versions and confirms deletion 
+
+    [31mTest timeout of 45000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 45000ms exceeded.
+    Call log:
+    [2m  - waiting for getByLabel('Request reason', { exact: true })[22m
+
+
+      218 |   await page
+      219 |     .getByLabel("Request reason", { exact: true })
+    > 220 |     .fill("Updated request reasoning");
+          |      ^
+      221 |   await page
+      222 |     .getByRole("button", { name: "Save leave request", exact: true })
+      223 |     .click();
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:220:6
+
+    Error Context: test-results\hr-employee-leave-CRUD-pre-41c95-sions-and-confirms-deletion\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-employee-leave-CRUD-pre-41c95-sions-and-confirms-deletion\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-employee-leave-CRUD-pre-41c95-sions-and-confirms-deletion\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) browser-tests\hr.spec.mjs:239:1 › overlapping dates are rejected while the unsaved request remains exportable 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveValue[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: getByLabel('Request reason', { exact: true })
+    Expected: [32m"Keep this overlap draft"[39m
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toHaveValue" with timeout 10000ms[22m
+    [2m  - waiting for getByLabel('Request reason', { exact: true })[22m
+
+
+      255 |     .click();
+      256 |   await expect(page.getByRole("alert")).toContainText("overlap");
+    > 257 |   await expect(page.getByLabel("Request reason", { exact: true })).toHaveValue(
+          |                                                                    ^
+      258 |     "Keep this overlap draft",
+      259 |   );
+      260 |   const download = page.waitForEvent("download");
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:257:68
+
+    Error Context: test-results\hr-overlapping-dates-are-r-f82cb--request-remains-exportable\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-overlapping-dates-are-r-f82cb--request-remains-exportable\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-overlapping-dates-are-r-f82cb--request-remains-exportable\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) browser-tests\hr.spec.mjs:269:1 › manager decisions and owner cancellation preserve the recorded decision 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeDisabled[2m([22m[2m)[22m failed
+
+    Locator: getByLabel('Request reason', { exact: true })
+    Expected: disabled
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeDisabled" with timeout 10000ms[22m
+    [2m  - waiting for getByLabel('Request reason', { exact: true })[22m
+
+
+      277 |   await expect(
+      278 |     page.getByLabel("Request reason", { exact: true }),
+    > 279 |   ).toBeDisabled();
+          |     ^
+      280 |   await page
+      281 |     .getByLabel("Decision note", { exact: true })
+      282 |     .fill("Coordinate a handover before leaving.");
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:279:5
+
+    Error Context: test-results\hr-manager-decisions-and-o-5ba44-serve-the-recorded-decision\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-manager-decisions-and-o-5ba44-serve-the-recorded-decision\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-manager-decisions-and-o-5ba44-serve-the-recorded-decision\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) browser-tests\hr.spec.mjs:316:1 › two employee editors preserve the losing draft and captured version 
+
+    [31mTest timeout of 45000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 45000ms exceeded.
+    Call log:
+    [2m  - waiting for getByLabel('Request reason', { exact: true })[22m
+
+
+      327 |   await page
+      328 |     .getByLabel("Request reason", { exact: true })
+    > 329 |     .fill("Accepted first-editor note");
+          |      ^
+      330 |   await page
+      331 |     .getByRole("button", { name: "Save leave request", exact: true })
+      332 |     .click();
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:329:6
+
+    Error Context: test-results\hr-two-employee-editors-pr-14c79--draft-and-captured-version\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-two-employee-editors-pr-14c79--draft-and-captured-version\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-two-employee-editors-pr-14c79--draft-and-captured-version\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) browser-tests\hr.spec.mjs:360:1 › competing manager and HR decisions do not overwrite the first decision 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveValue[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: getByLabel('Decision note', { exact: true })
+    Expected: [32m"Pending HR reasoning"[39m
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toHaveValue" with timeout 10000ms[22m
+    [2m  - waiting for getByLabel('Decision note', { exact: true })[22m
+
+
+      382 |     .click();
+      383 |   await expect(second.getByRole("alert")).toContainText("record changed");
+    > 384 |   await expect(second.getByLabel("Decision note", { exact: true })).toHaveValue(
+          |                                                                     ^
+      385 |     "Pending HR reasoning",
+      386 |   );
+      387 |   second.once("dialog", (d) => d.accept());
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:384:69
+
+    Error Context: test-results\hr-competing-manager-and-H-d2e71-verwrite-the-first-decision\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-competing-manager-and-H-d2e71-verwrite-the-first-decision\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-competing-manager-and-H-d2e71-verwrite-the-first-decision\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) browser-tests\hr.spec.mjs:396:1 › failed saves preserve input and failed refreshes do not undo accepted saves 
+
+    [31mTest timeout of 45000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 45000ms exceeded.
+    Call log:
+    [2m  - waiting for getByLabel('Request reason', { exact: true })[22m
+
+
+      411 |   await page
+      412 |     .getByLabel("Request reason", { exact: true })
+    > 413 |     .fill("Keep this pending note");
+          |      ^
+      414 |   await page
+      415 |     .getByRole("button", { name: "Save leave request", exact: true })
+      416 |     .click();
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:413:6
+
+    Error Context: test-results\hr-failed-saves-preserve-i-689b0--do-not-undo-accepted-saves\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-failed-saves-preserve-i-689b0--do-not-undo-accepted-saves\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-failed-saves-preserve-i-689b0--do-not-undo-accepted-saves\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) browser-tests\hr.spec.mjs:435:1 › section changes and sign-out confirm unsaved work ───────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveValue[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: getByLabel('Request reason', { exact: true })
+    Expected: [32m"Unsaved transition draft"[39m
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toHaveValue" with timeout 10000ms[22m
+    [2m  - waiting for getByLabel('Request reason', { exact: true })[22m
+
+
+      445 |     .getByRole("button", { name: "People directory", exact: true })
+      446 |     .click();
+    > 447 |   await expect(page.getByLabel("Request reason", { exact: true })).toHaveValue(
+          |                                                                    ^
+      448 |     "Unsaved transition draft",
+      449 |   );
+      450 |   page.once("dialog", (d) => d.dismiss());
+        at C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\browser-tests\hr.spec.mjs:447:68
+
+    Error Context: test-results\hr-section-changes-and-sign-out-confirm-unsaved-work\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hr-section-changes-and-sign-out-confirm-unsaved-work\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hr-section-changes-and-sign-out-confirm-unsaved-work\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7 failed
+    browser-tests\hr.spec.mjs:202:1 › employee leave CRUD preserves accepted versions and confirms deletion 
+    browser-tests\hr.spec.mjs:239:1 › overlapping dates are rejected while the unsaved request remains exportable 
+    browser-tests\hr.spec.mjs:269:1 › manager decisions and owner cancellation preserve the recorded decision 
+    browser-tests\hr.spec.mjs:316:1 › two employee editors preserve the losing draft and captured version 
+    browser-tests\hr.spec.mjs:360:1 › competing manager and HR decisions do not overwrite the first decision 
+    browser-tests\hr.spec.mjs:396:1 › failed saves preserve input and failed refreshes do not undo accepted saves 
+    browser-tests\hr.spec.mjs:435:1 › section changes and sign-out confirm unsaved work ────────────
+  4 passed (4.3m)
+[2m[WebServer] [22m(node:16356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Command failed: C:\Program Files\nodejs\node.exe C:\Users\Owner\Desktop\AstraOrganized2\astra-remaining-improvements\stage\baf8258948be\node_modules\@playwright\test\cli.js test
+[2m[WebServer] [22m(node:16356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:20956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,79 +1,102 @@
-// Prisma schema for HR Platform
-// Models: User, Employee, Department, LeaveRequest, Review
-
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
-
-model User {
-  id            String   @id @default(cuid())
-  email         String   @unique
-  passwordHash  String
-  name          String
-  role          Role     @default(EMPLOYEE)
-  createdAt     DateTime @default(now())
-  employees     Employee[] @relation("ManagerEmployees")
-  leaveRequests LeaveRequest[]
-  reviews       Review[]
-}
-
 enum Role {
   EMPLOYEE
   MANAGER
   HR_ADMIN
 }
-
+enum LeaveType {
+  VACATION
+  SICK
+  PERSONAL
+}
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+model User {
+  id String @id @default(cuid())
+  email String @unique @db.VarChar(254)
+  passwordHash String?
+  name String @db.VarChar(120)
+  role Role @default(EMPLOYEE)
+  createdAt DateTime @default(now())
+  employee Employee?
+  decisions LeaveRequest[] @relation("LeaveDecider")
+  reviews Review[] @relation("ReviewAuthor")
+}
 model Department {
-  id        String     @id @default(cuid())
-  name      String
+  id String @id @default(cuid())
+  name String @db.VarChar(120)
+  nameKey String @unique @db.VarChar(120)
+  version Int @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   employees Employee[]
 }
-
 model Employee {
-  id           String   @id @default(cuid())
-  userId       String   @unique
+  id String @id @default(cuid())
+  userId String @unique
   departmentId String
-  managerId    String?
-  position     String
-  startDate    DateTime @default(now())
-
-  user         User      @relation(fields: [userId], references: [id])
-  department   Department @relation(fields: [departmentId], references: [id])
-  manager      Employee?  @relation("ManagerEmployees", fields: [managerId], references: [id])
-  reports      Employee[] @relation("ManagerEmployees")
+  managerId String?
+  position String @db.VarChar(160)
+  startDate DateTime @db.Date
+  active Boolean @default(true)
+  version Int @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id], onDelete: Restrict)
+  department Department @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  manager Employee? @relation("ManagerEmployees", fields: [managerId], references: [id], onDelete: Restrict)
+  reports Employee[] @relation("ManagerEmployees")
   leaveRequests LeaveRequest[]
-  reviews      Review[]
+  reviews Review[]
+  @@index([departmentId, managerId, createdAt, id])
 }
-
 model LeaveRequest {
-  id          String   @id @default(cuid())
-  employeeId  String
-  startDate   DateTime
-  endDate     DateTime
-  type        String   // VACATION, SICK, etc.
-  status      String   @default("PENDING") // PENDING, APPROVED, REJECTED
-  reason      String?
-  approvedBy  String?
-  createdAt   DateTime @default(now())
-
-  employee    Employee @relation(fields: [employeeId], references: [id])
+  id String @id @default(cuid())
+  employeeId String
+  startDate DateTime @db.Date
+  endDate DateTime @db.Date
+  type LeaveType
+  status LeaveStatus @default(PENDING)
+  reason String @default("") @db.VarChar(2000)
+  decidedById String?
+  decisionNote String @default("") @db.VarChar(1000)
+  version Int @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
+  decidedBy User? @relation("LeaveDecider", fields: [decidedById], references: [id], onDelete: Restrict)
+  @@index([employeeId, status, startDate, id])
 }
-
 model Review {
-  id         String   @id @default(cuid())
+  id String @id @default(cuid())
   employeeId String
   reviewerId String
-  period     String
-  rating     Int
-  comments   String?
-  status     String   @default("DRAFT")
-  createdAt  DateTime @default(now())
-
-  employee   Employee @relation(fields: [employeeId], references: [id])
-  reviewer   User     @relation(fields: [reviewerId], references: [id])
+  period String @db.VarChar(120)
+  rating Int
+  comments String?
+  status String @default("DRAFT")
+  createdAt DateTime @default(now())
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
+  reviewer User @relation("ReviewAuthor", fields: [reviewerId], references: [id], onDelete: Restrict)
+}
+model AuditEvent {
+  id String @id @default(cuid())
+  actorId String
+  resourceType String @db.VarChar(20)
+  resourceId String
+  employeeId String?
+  action String @db.VarChar(24)
+  version Int
+  createdAt DateTime @default(now())
+  @@index([resourceType, resourceId, createdAt])
 }

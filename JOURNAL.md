@@ -1,3 +1,5 @@
+> Historical starter notes. Current implemented behavior and setup are in [README.md](README.md), with the detailed course in [astraupskill](astraupskill/README.md). Planned features below are not completion claims.
+
 # SWE Thought Process Journal - grokbuildhrproject
 
 ## Why HR System?

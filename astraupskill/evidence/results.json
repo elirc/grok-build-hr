@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "totalTests": 76,
+  "backendTests": 54,
+  "frontendTests": 8,
+  "setupTests": 3,
+  "browserTests": 11,
+  "backendBuild": true,
+  "frontendTypecheck": true,
+  "frontendBuild": true,
+  "freshMigration": true,
+  "seedRepeatedWithoutOverwrite": true,
+  "ownedPostgresShutdownConfirmed": true,
+  "reviewedScreenshots": 2,
+  "evidence": [
+    "full-first/backend.json",
+    "full-first/frontend.json",
+    "browser-final/results.json",
+    "browser-final/postgres-stop.log"
+  ],
+  "limits": "Local fictional workflow; see project VERIFICATION.md for unimplemented capabilities."
+}

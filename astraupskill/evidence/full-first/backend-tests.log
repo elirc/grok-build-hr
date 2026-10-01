@@ -1,0 +1,241 @@
+PASS src/__tests__/workflow.integration.test.ts (53.145 s)
+  ● Console
+
+    console.error
+      {"requestId":"95272129-abc7-413b-9857-5af7b2329eee","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+    console.error
+      {"requestId":"f8c49976-41ba-4fb0-a989-30515963e507","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+    console.error
+      {"requestId":"9fdc8a1d-ab12-474c-9b89-265ea5ca128f","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at Immediate.next (../node_modules/express/lib/router/index.js:280:10)
+      at Immediate._onImmediate (../node_modules/express/lib/router/index.js:646:15)
+
+    console.error
+      {"requestId":"37d3ecd0-3d75-42be-802c-3cd2c9039760","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+    console.error
+      {"requestId":"3657ed9e-d297-4407-8c3c-67b7aeb223a4","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+    console.error
+      {"requestId":"fd1fdf54-1f93-47da-9ace-6f41319bea41","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+    console.error
+      {"requestId":"1f613b89-ef3e-4899-a2e8-2ba4909f8b31","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+    console.error
+      {"requestId":"8799fdc5-ba40-4485-8291-527feffe5963","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at Immediate.next (../node_modules/express/lib/router/index.js:280:10)
+      at Immediate._onImmediate (../node_modules/express/lib/router/index.js:646:15)
+
+    console.error
+      {"requestId":"8755a364-3838-4273-89b6-d218ff836b0e","status":500,"event":"request_failed"}
+
+      60 |   }
+      61 |   if (status >= 500)
+    > 62 |     console.error(
+         |             ^
+      63 |       JSON.stringify({
+      64 |         requestId: req.requestId,
+      65 |         status,
+
+      at errorHandler (src/lib/errors.ts:62:13)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:71:5)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at Layer.handle_error (../node_modules/express/lib/router/layer.js:67:12)
+      at trim_prefix (../node_modules/express/lib/router/index.js:326:13)
+      at ../node_modules/express/lib/router/index.js:286:9
+      at Function.process_params (../node_modules/express/lib/router/index.js:346:12)
+      at next (../node_modules/express/lib/router/index.js:280:10)
+      at ../node_modules/express/lib/router/index.js:646:15
+      at next (../node_modules/express/lib/router/index.js:265:14)
+      at next (../node_modules/express/lib/router/route.js:141:14)
+
+PASS src/__tests__/leaveService.test.ts
+
+Test Suites: 2 passed, 2 total
+Tests:       54 passed, 54 total
+Snapshots:   0 total
+Time:        56.979 s, estimated 81 s
+Ran all test suites.
+Test results written to: ..\..\..\checks\hr-workspace\full-first\backend.json

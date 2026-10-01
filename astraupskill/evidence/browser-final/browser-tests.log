@@ -1,0 +1,24 @@
+
+Running 11 tests using 1 worker
+
+  ok  1 browser-tests\hr.spec.mjs:50:1 › employee access and token lifetime match the actual authenticated scope (2.9s)
+  ok  2 browser-tests\hr.spec.mjs:79:1 › department CRUD retains identity and prevents referenced deletion (4.9s)
+  ok  3 browser-tests\hr.spec.mjs:138:1 › HR creates edits and explicitly deletes an unreferenced employee aggregate (4.8s)
+  ok  4 browser-tests\hr.spec.mjs:202:1 › employee leave CRUD preserves accepted versions and confirms deletion (4.6s)
+  ok  5 browser-tests\hr.spec.mjs:239:1 › overlapping dates are rejected while the unsaved request remains exportable (3.9s)
+  ok  6 browser-tests\hr.spec.mjs:269:1 › manager decisions and owner cancellation preserve the recorded decision (6.0s)
+  ok  7 browser-tests\hr.spec.mjs:316:1 › two employee editors preserve the losing draft and captured version (7.4s)
+  ok  8 browser-tests\hr.spec.mjs:360:1 › competing manager and HR decisions do not overwrite the first decision (6.8s)
+  ok  9 browser-tests\hr.spec.mjs:396:1 › failed saves preserve input and failed refreshes do not undo accepted saves (3.6s)
+  ok 10 browser-tests\hr.spec.mjs:435:1 › section changes and sign-out confirm unsaved work (3.5s)
+  ok 11 browser-tests\hr.spec.mjs:468:1 › desktop and narrow leave-review layouts remain readable (4.3s)
+
+  11 passed (1.1m)
+[2m[WebServer] [22m(node:16156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:15804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

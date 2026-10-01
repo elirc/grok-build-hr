@@ -1,22 +1,46 @@
-// Employee routes
-// Focus on RBAC and filtering by manager/dept.
-
-import { Router } from 'express';
-import * as employeeService from '../services/employeeService';
-
+import { Router } from "express";
+import { actor } from "../middleware/auth";
+import { asyncRoute } from "../lib/errors";
+import * as service from "../services/employeeService";
 const router = Router();
-
-// GET /api/employees - list with filters (e.g. by dept or manager)
-router.get('/', async (req, res) => {
-  const { departmentId, managerId } = req.query;
-  const employees = await employeeService.getEmployees({ departmentId, managerId });
-  res.json({ data: employees });
-});
-
-// POST create employee (HR only in real impl)
-router.post('/', async (req, res) => {
-  const employee = await employeeService.createEmployee(req.body);
-  res.status(201).json({ data: employee });
-});
-
+router.get(
+  "/",
+  asyncRoute(async (req, res) => {
+    res.json(await service.getEmployees(actor(req), req.query));
+  }),
+);
+router.get(
+  "/options",
+  asyncRoute(async (req, res) => {
+    res.json(await service.options(actor(req)));
+  }),
+);
+router.post(
+  "/",
+  asyncRoute(async (req, res) => {
+    const row = await service.createEmployee(actor(req), req.body);
+    res
+      .location("/api/employees/" + row.id)
+      .status(201)
+      .json(row);
+  }),
+);
+router.get(
+  "/:id",
+  asyncRoute(async (req, res) => {
+    res.json(await service.getEmployee(actor(req), req.params.id));
+  }),
+);
+router.put(
+  "/:id",
+  asyncRoute(async (req, res) => {
+    res.json(await service.updateEmployee(actor(req), req.params.id, req.body));
+  }),
+);
+router.delete(
+  "/:id",
+  asyncRoute(async (req, res) => {
+    res.json(await service.deleteEmployee(actor(req), req.params.id, req.body));
+  }),
+);
 export default router;
