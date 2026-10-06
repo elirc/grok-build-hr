@@ -18,3 +18,5 @@ Additional ideas:
 - E2E test: Employee submits leave → Manager sees it in list → Approves it → Status updates in UI.
 
 Update your test commands in package.json and run `npm test` in backend and frontend.
+
+> **Status (2026-10-06, verified against code):** All three "additional ideas" shipped. Unrelated managers are refused in `backend/src/__tests__/workflow.integration.test.ts:608`, invalid and reversed dates in `:473`, and the employee-submits / manager-approves / UI-updates flow runs in Chromium at `browser-tests/hr.spec.mjs:269`. Two descriptions above no longer match: `leaveService.test.ts` now holds 16 database-free contract tests of validators and scope helpers (no mocked repository), and `LeavePage.test.tsx` stubs `fetch` rather than TanStack Query. Tests run from the repository root with `npm run test:api`, `npm test`, or `npm run verify`, which create their own temporary PostgreSQL cluster; running `npm test` inside `backend/` is refused by the integration fixture.

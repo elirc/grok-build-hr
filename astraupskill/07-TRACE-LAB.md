@@ -4,7 +4,7 @@ Use the generated local demo accounts from [the setup guide](../README.md). Keep
 
 ## Round 3, in the repository
 
-Round 3 is decided by these lines from `backend/src/repositories/leaveRepository.ts:239-251`. Note the pairing the break-it exercise in chapter 04 depends on: the pre-check is a read, but `status: "PENDING"` inside the `updateMany` `where` is the guard that makes a second decision lose.
+Round 3 is decided by these lines from `backend/src/repositories/leaveRepository.ts:239-251`. Note the overlap the break-it exercise in chapter 04 explores: a concurrent second decision loses on the version check (line 239, repeated as `version: expected` in the `where`), because the employee row lock at line 221 made it wait and re-read the advanced version, while a later decision sent with the *current* version loses on the status check. The status appears twice, as a pre-check for a clear message and in the `where`, so removing either one alone changes no test result.
 
 ```ts
     if (current.version !== expected) throw stale();

@@ -6,7 +6,7 @@ Your learning target is to explain three things for every request: who may perfo
 
 ## Prerequisites and glossary
 
-**Prerequisites:** TypeScript with Express-style routes, SQL and a little Prisma, and the idea of a signed token identifying a caller. The local-first courses (`JSProjectLearn`, `astra4.2`) cover versions and drafts before you meet them here against Postgres.
+**Prerequisites:** TypeScript with Express-style routes, SQL and a little Prisma, and the idea of a signed token identifying a caller.
 
 | Term | Meaning here | Where in this project |
 |---|---|---|
@@ -17,11 +17,11 @@ Your learning target is to explain three things for every request: who may perfo
 | transaction | The unit in which the row change and its audit row are written together. | the `Tx` client threaded through `backend/src/repositories/leaveRepository.ts` |
 | advisory lock | A database lock taken for the whole transaction to serialise reporting-graph changes. | `chartLock` with `pg_advisory_xact_lock(74219801)` in `backend/src/repositories/employeeRepository.ts` |
 | inclusive interval | Two leave ranges that share a single day overlap. | `overlap` in `backend/src/repositories/leaveRepository.ts` |
-| state machine | Only a PENDING request may be edited, approved, rejected or cancelled. | the `status` guards in `backend/src/repositories/leaveRepository.ts` |
+| state machine | Only a PENDING request may be edited, deleted, approved or rejected; PENDING or APPROVED may be cancelled by its owner. | the `status` guards in `backend/src/repositories/leaveRepository.ts` (`decide` at 240-241, `cancel` at 274-278) |
 | audit event | The durable record of who changed what at which version. | `audit(tx, ...)` and the `AuditEvent` table in the migration SQL |
-| verified authority | A manager may decide only for their own reports, checked server-side. | `approveLeave` in `backend/src/services/leaveService.ts` |
+| verified authority | A manager may decide only for their own reports, checked server-side. | `decide` in `backend/src/repositories/leaveRepository.ts:223-238` (the service's `approveLeave` only parses input) |
 | HR-only guard | The narrower check used where a role label is not enough. | `requireHr` in `backend/src/middleware/auth.ts` |
-| adoption | Replacing client state with the record the server accepted, including its new version. | `frontend/src/hooks/useWorkspace.ts` |
+| adoption | Replacing client state with the record the server accepted, including its new version. | `adopt` in `frontend/src/features/leave/pages/LeavePage.tsx:83-88` |
 
 ## Session boundaries
 
@@ -30,7 +30,7 @@ Your learning target is to explain three things for every request: who may perfo
 - **Session 1 (about 2 h):** `01` and `02` up to the state machine (roles vs scope, owner edits, calendar days).
 - **Session 2 (about 2 h):** the rest of `02` (overlap intervals, versions, transactions, the reporting-graph lock and its cost) and `03` with the snapshots open.
 - **Session 3 (about 2 h):** `04` including the break-it section, then `07`.
-- **Session 4+:** `05` tasks in order, checking task 1 against `06` before attempting the harder two.
+- **Session 4+:** `05` Part A drills (Node only), then the Part B tasks, checking Exercise 6 against its worked solution in `06` before attempting the larger ones.
 
 ## Suggested progression
 

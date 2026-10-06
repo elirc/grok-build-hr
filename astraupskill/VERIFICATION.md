@@ -4,7 +4,7 @@ The delivered HR workspace was checked on September 9, 2026 using Node 22.16.0, 
 
 ## Evidence and snapshots inside the repo
 
-`astraupskill/snapshots/` now holds the delivered `leaveRoutes`, `leaveService` and `leaveRepository` as `-before.ts.txt`, so chapter 03's before/after claims can be diffed locally. `astraupskill/evidence/` holds `results.json`, `full-first/backend.json` and `frontend.json` with their test logs, and `browser-final/browser.json`, `results.json` and `browser-tests.log`. The counts in this file refer to `full-first` (backend and frontend) plus `browser-final` (browser).
+`astraupskill/snapshots/` holds the starter (pre-improvement) `leaveRoutes`, `leaveService` and `leaveRepository` as `-before.ts.txt`, so chapter 03's before/after claims can be diffed against `backend/src/` locally. `astraupskill/evidence/` holds `results.json`, `full-first/backend.json` and `frontend.json` with their test logs, and `browser-final/browser.json`, `results.json` and `browser-tests.log`. The counts in this file refer to `full-first` (backend and frontend) plus `browser-final` (browser).
 
 ## Evidence and reproduction
 
